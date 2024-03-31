@@ -1,40 +1,39 @@
 <script>
-    let records;
-    let author = "Shakespeare";
-    async function getData() {
-        const response = await fetch(`http://localhost:8080/texts/${author}`, {
-            method: "GET",
-        });
-        if (response.status == 200) {
-            console.log("Success");
-            records = await response.json();
-            console.log(records);
-        } else {
-            let status = records.status;
-            records = 0;
-            throw new Error(status);
-        }
-    }
+    import Router from "svelte-spa-router";
+    import Home from "./routes/home.svelte";
+    import Create from "./routes/create.svelte";
+
+    let routes = {
+        "/": Home,
+        "/create": Create,
+    };
 </script>
 
-<div>
-    <h1>My Super Sick Frontend.</h1>
-    Last Name: <input bind:value={author} placeholder="Author Last Name" />
-    {#if records}
-        <p>
-            <strong>{records[0].first_name} {records[0].last_name}</strong>
-        </p>
-        {#each records as record}
-            <p>
-                {record.title}: {record.published}
-            </p>
-        {/each}
-    {:else if records == 0}
-        <p>No Author matching that last name</p>
-    {:else}
-        <p>no data yet</p>
-    {/if}
-    <p>
-        <button on:click={getData}>Get Data</button>
-    </p>
-</div>
+<main>
+    <Router {routes} />
+    <footer>
+        <span>
+            'Properly, we should read for power. Man reading should be man
+            intensely alive. The book should be a ball of light in one's hand.'
+            - Ezra Pound
+        </span>
+    </footer>
+</main>
+
+<style>
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 1.2vw;
+        width: 100vw;
+        height: fit-content;
+        background-color: #303c50;
+    }
+
+    span {
+        color: #f4f1de;
+    }
+</style>

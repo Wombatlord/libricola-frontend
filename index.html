@@ -1,13 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Svelte</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libricola</title>
+</head>
+
+<header>
+  <div class="even_columns">
+    <div class="image"><img src="./src/assets/edited.png"></div>
+    <div>
+      <em>
+        <h1 class="banner"><a href="#/" class="title">Libricola</a></h1>
+      </em>
+    </div>
+    <div class="image"><img src="./src/assets/edited.png"></div>
+  </div>
+  <div>
+    <nav><a href="#/">Search</a><a href="#/create">Create</a></nav>
+  </div>
+</header>
+
+<body>
+
+  <div id="app">
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
+
+<style>
+  img {
+    max-width: 100%;
+    align-items: center;
+  }
+  div.even_columns {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #303c50;
+    margin-bottom: 0;
+  }
+
+  div.even_columns>* {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  div.image {
+    display: flex;
+  }
+
+  nav {
+    display: flex;
+    flex-basis: 100%;
+    font-size: 2em;
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+  }
+
+  a.title {
+    border-top: solid #f4f1de;
+    border-bottom: solid #f4f1de;
+    border-width: 0.1em;
+    color: #f4f1de;
+    font-family: Inter;
+    padding-top: 0.15em;
+    padding-bottom: 0.08em;
+  }
+
+  h1.banner {
+    font-size: 6vw;
+    margin: 0 auto;
+    color: #f4f1de;
+  }
+
+</style>
