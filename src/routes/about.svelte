@@ -1,9 +1,10 @@
 <h2><em><strong>Libricola, Libricolae</strong></em></h2>
-<p>noun</p>
-<p>declension: 1st declension</p>
-<p>gender: masculine</p>
+<p>/lˌiːbɹɪkˈo͡ʊlə/</p>
+<p>Noun</p>
+<p>Declension: 1st declension</p>
+<p>Gender: masculine</p>
 <h3>Definitions</h3>
-<p> 1. bibliophile</p>
+<p> 1. Bibliophile, a lover of books.</p>
 
 <style>
     h2 {

@@ -39,6 +39,7 @@
                     id="first_name"
                     placeholder="William"
                     bind:value={first_name}
+                    required
                 />
             </p>
             <p>
@@ -48,6 +49,7 @@
                     id="last_name"
                     placeholder="Shakespeare"
                     bind:value={last_name}
+                    required
                 />
             </p>
             <p>
@@ -57,6 +59,7 @@
                     id="published"
                     placeholder="Year"
                     bind:value={published}
+                    required
                 />
             </p>
             <p>
@@ -66,6 +69,7 @@
                     id="title"
                     placeholder="Hamlet"
                     bind:value={title}
+                    required
                 />
             </p>
             <p>
@@ -75,6 +79,7 @@
                     id="genres"
                     placeholder="Tragedy"
                     bind:value={genre}
+                    required
                 />
             </p>
             <p>

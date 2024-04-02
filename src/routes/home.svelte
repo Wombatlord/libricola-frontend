@@ -11,6 +11,7 @@
     }
 </script>
 
+
 <main>
     <div class="search-wrapper">
         <input
@@ -19,7 +20,9 @@
             placeholder="Author Last Name"
             bind:value={author}
         />
-        <button on:click={getData}>Get Data</button>
+        <button on:click={getData}
+            ><span class="material-symbols-outlined"> search </span></button
+        >
     </div>
     <div class="records">
         {#if records == "No title & author pairings found."}
@@ -28,7 +31,7 @@
             {#each Object.keys(records) as author}
                 <div class="texts">
                     <p>
-                        <strong><span><em>{author}</em></span></strong>
+                        <strong><span class="author"><em>{author}</em></span></strong>
                     </p>
                     <div class="entries">
                         {#each Object.entries(records[author]) as title}
@@ -42,18 +45,39 @@
                 </div>
             {/each}
         {:else}
-            <p>Enter an author's last name and hit the button to search!</p>
+            <h2><em><strong>Libricola, Libricolae</strong></em></h2>
+            <p>/lˌiːbɹɪkˈo͡ʊlə/</p>
+            <p>Noun</p>
+            <p>Declension: 1st declension</p>
+            <p>Gender: masculine</p>
+            <h3>Definitions</h3>
+            <p>1. Bibliophile, a lover of books.</p>
         {/if}
         <p></p>
     </div>
 </main>
 
 <style>
+    .material-symbols-outlined {
+        font-size: 1em;
+        font-variation-settings:
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24;
+    }
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    h2 {
+        font-family: Inter;
+        font-size: 4em;
+        margin: 0em 0 25px;
+    }
+
     li {
         list-style: decimal;
         /* list-style-position: inside; */
@@ -73,7 +97,7 @@
         box-sizing: border-box;
     }
 
-    span {
+    span.author {
         font-size: 5em;
         color: #f4f1de;
         font-family: Inter;
@@ -82,6 +106,7 @@
     span.titles {
         font-size: 1.2em;
         color: #f4f1de;
+        font-family: Inter;
     }
 
     .texts {
@@ -98,6 +123,7 @@
     }
 
     .search-wrapper {
+        position: relative;
         max-width: max-content;
         display: flex;
         align-items: center;
