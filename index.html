@@ -19,17 +19,27 @@
     <div class="image"><img src="./src/assets/edited.png"></div>
   </div>
   <div>
-    <nav><a href="#/">Search</a><a href="#/create">Create</a></nav>
+    <nav><a href="#/">Search</a><a href="#/about">About</a><a href="#/create">Create</a></nav>
   </div>
 </header>
 
-<body>
+<main>
 
-  <div id="app">
-  </div>
+  <body class="container">
 
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <div id="app">
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <div id="sticky-footer">
+      <span>
+        'Properly, we should read for power. Man reading should be man
+        intensely alive. The book should be a ball of light in one's hand.'
+        - Ezra Pound
+      </span>
+    </div>
+  </body>
+</main>
 
 </html>
 
@@ -38,9 +48,9 @@
     max-width: 100%;
     align-items: center;
   }
+
   div.even_columns {
     display: flex;
-    align-items: center;
     text-align: center;
     background-color: #303c50;
     margin-bottom: 0;
@@ -57,19 +67,26 @@
 
   nav {
     display: flex;
-    flex-basis: 100%;
     font-size: 2em;
+    border-bottom: 2px solid #f4f1de;
+    border-top: 2px solid #f4f1de;
+    background-color: #303c50;
+    margin-bottom: 4rem;
+  }
+
+  nav>* {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 
   a {
     width: 100%;
     text-align: center;
+    color: #f4f1de;
+    margin: 1rem;
   }
 
   a.title {
-    border-top: solid #f4f1de;
-    border-bottom: solid #f4f1de;
-    border-width: 0.1em;
     color: #f4f1de;
     font-family: Inter;
     padding-top: 0.15em;
@@ -80,6 +97,37 @@
     font-size: 6vw;
     margin: 0 auto;
     color: #f4f1de;
+    border-bottom: solid #f4f1de;
+    border-top: solid #f4f1de;
+    align-items: center;
+    border-width: 0.1em;
   }
 
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+
+  #sticky-footer {
+    position: absolute;
+    padding: 0px 0;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 1.2vw;
+    background-color: #303c50;
+  }
 </style>
+<!-- footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.2vw;
+  width: 100%;
+  background-color: #303c50;
+  text-align: center;
+} -->
